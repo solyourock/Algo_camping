@@ -1,5 +1,5 @@
 import gocamping_api as ga
-import koreatour_api as ka
+# import koreatour_api as ka
 import make_sigungucode as ms
 import pandas as pd
 pd.set_option('display.max_row', 500)
@@ -7,7 +7,7 @@ pd.set_option('display.max_columns', 100)
 
 if __name__ == '__main__':
     s0 = ga.GocampingApi()
-    s1 = ka.KoreaTourApi()
+    # s1 = ka.KoreaTourApi()
     sgg = ms.Sigungucode()
 
     df = s0.gocampingAPI()
