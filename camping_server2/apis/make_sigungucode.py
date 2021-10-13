@@ -1,12 +1,20 @@
 import pandas as pd
-import camping_server2.config as config
+# import camping_server2.config as config
 from datetime import datetime
 
 class Sigungucode:
     def __init__(self):
-        self.path = config.Config.PATH
-        self.do_list = config.Config.DO_LIST
-        self.five_code = pd.read_csv(self.path + "/sigungucode.csv")
+        # self.path = config.Config.PATH
+        self.do_list = {'충북': '충청북도', '충남': '충청남도',
+               '경북': '경상북도', '경남': '경상남도',
+               '전북': '전라북도', '전남': '전라남도',
+               '강원': '강원도', '경기': '경기도',
+               '인천': '인천광역시', '인천시': '인천광역시',
+               '부산': '부산광역시', '울산': '울산광역시', '대전': '대전광역시',
+               '대구': '대구광역시', '광주': '광주광역시',
+               '서울': '서울특별시', '서울시': '서울특별시',
+               '제주': '제주특별자치도', '제주도': '제주특별자치도'}
+        self.five_code = pd.read_csv('/Users/sol/Desktop/dss/Crawling/datas/sigungucode.csv')
 
 
     def read_file(self, df):
@@ -99,6 +107,6 @@ class Sigungucode:
             df.drop(drop_df.index, axis=0, inplace=True)
 
         # 최종 처리된 파일 저장
-        df.to_csv(self.path + f"/{filename}_{filedate}.csv", encoding="utf-8-sig")
-        print("------")
-        print("File save completed!")
+        df.to_csv(f"/{filename}_{filedate}.csv", encoding="utf-8-sig")
+        # print("------")
+        # print("File save completed!")

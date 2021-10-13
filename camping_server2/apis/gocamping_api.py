@@ -9,8 +9,8 @@ from pandas.io.json import json_normalize
 
 class GocampingApi:
     def __init__(self):
-        # self.secretKey = config['API_KEYS']['PUBLIC_API_KEY']
-        self.secretKey = config.Config.PUBLIC_API_KEY
+        self.secretKey = config['API_KEYS']['PUBLIC_API_KEY']
+        # self.secretKey = "1lQh1AXwuKpBPamJ8M10NbN0c0hg%2Beex7NUu6k5HgjiP%2FupWExgtLRbmjRV7XLAEMf5l0j%2FH5um7uy4Z0cErXg%3D%3D"
 
     def gocampingAPI(self):
         url = 'http://api.visitkorea.or.kr/openapi/service/rest/GoCamping/basedList?'
